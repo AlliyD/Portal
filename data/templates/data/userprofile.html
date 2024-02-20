@@ -1,0 +1,66 @@
+{% extends "data\reportsbase.html" %}
+
+{% block title %}
+    User Profile | AIH Reporting
+{% endblock title %}
+
+
+{% block maincontent %}
+
+<br>
+<table class="reports-table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Email
+        </th>
+      
+      
+    </tr>
+    <tbody>
+        
+
+        <tr>
+    
+            <td>{{staffuser.name}}</td>
+            <td>{{staffuser.staff_title}}</td>
+            <td>{{staffuser.email}}</td>
+
+        
+        </tr>
+    
+
+        <br>
+<table class="reports-table">
+    <tr>
+
+        <th>
+            Department
+        </th>
+        <th>
+            Date Created
+        </th>
+      
+    </tr>
+    <tbody>
+        
+        <tr>
+    
+            <td>{{staffuser.department}}</td>
+            <td>{{staffuser.date_created}}</td>
+
+        
+        </tr>
+
+
+    </tbody>
+
+
+</table>
+
+{% endblock %}

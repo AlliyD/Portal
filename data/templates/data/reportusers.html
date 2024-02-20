@@ -1,0 +1,58 @@
+{% extends "data\reportsbase.html" %}
+
+{% block title %}
+    report users | AIH Reporting
+{% endblock title %}
+
+
+{% block maincontent %}
+<br>
+<table class="reports-table">
+    <tr>
+        <th>
+        
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            
+        </th>
+        <th>
+            
+        </th>
+      
+    </tr>
+    <tbody>
+        
+        {% for reportuser in reportusers %}
+        <tr>
+
+            <td><a href="{% url 'profile' reportuser.id %}" id="view_btn">View</a></td>
+            <td>{{reportuser.name}}</td>
+            <td>{{reportuser.staff_title}}</td>
+            <td>{{reportuser.email}}</td>
+            <td>{{reportuser.department}}</td>
+            <td><a href="{% url 'update_account' reportuser.id %}" id="update_btn">Update Profile</a></td>
+            <td><a href="" id="delete_btn">Delete Profile</a></td>
+
+        
+        </tr>
+
+
+        {% endfor %}
+
+    </tbody>
+
+
+</table>
+{% endblock %}

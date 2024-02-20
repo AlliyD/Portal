@@ -1,0 +1,61 @@
+
+{% extends "data\base.html" %}
+{% load static %}
+
+
+{% block title %}
+    Welcome | AIH Reporting
+{% endblock title %}
+
+{% block maincontent %}
+    
+<style>
+    body{
+        background-image : url('static/images/mainbg.jpg');
+        background-position: center;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .hero-content{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .main-header{
+        font-size: 60px;
+        color: lightgrey;
+    }
+
+    p{
+        color: lightgray;
+        margin: 20px;
+    }
+
+    #getstarted {
+        padding: 10px 20px;
+        color: aliceblue;
+        background-color: #fb5607;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="hero-content">
+    <h1 class="main-header">
+        AIH Reporting Portal
+    </h1>
+    <p>
+        Get started to create your account or Login to access your desired reports
+    </p>
+        <a href="{% url 'user_creation' %}" id="getstarted">
+            Get Started
+        </a>
+</div>
+    
+
+
+{% endblock maincontent %}

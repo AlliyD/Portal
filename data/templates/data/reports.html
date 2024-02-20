@@ -1,0 +1,53 @@
+{% extends "data\reportsbase.html" %}
+
+{% block title %}
+    Reports | AIH Reporting
+{% endblock title %}
+
+
+{% block maincontent %}
+
+<br>
+<table class="reports-table">
+    <tr>
+        <th>
+            Report Name
+        </th>
+        <th>
+            Report Description
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+           
+        </th>
+        <th>
+            
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    <tbody>
+        
+        {% for bireport in bireport %}
+        <tr>
+    
+            <td>{{bireport.report_name}}</td>
+            <td>{{bireport.report_description}}</td>
+            <td>{{bireport.report_department}}</td>
+            <td><a href="{% url 'update_report' bireport.id %}" id="update_btn">Edit Report</a></td>
+            <td><a href="{% url 'delete_report' bireport.id %}" id="update_btn">Delete</a></td>
+            <td><a href="{{bireport.report_link}}" id="view_report" target="_blank">View Report</a></td>
+        </tr>
+
+
+        {% endfor %}
+
+    </tbody>
+
+
+</table>
+
+{% endblock maincontent %}

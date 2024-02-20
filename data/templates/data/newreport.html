@@ -1,0 +1,17 @@
+{% extends "data\reportsbase.html" %}
+
+{% block title %}
+    Create Report | AIH Reporting
+{% endblock title %}
+
+
+{% block maincontent %}
+<form action="#" method="POST">
+    {% csrf_token %}
+
+    {% render_field newreportform.report_name placeholder="Enter Report Name" %}
+
+    <input type="submit" value="Submit" name="Create Form">
+</form>
+
+{% endblock %}

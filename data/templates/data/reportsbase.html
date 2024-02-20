@@ -1,0 +1,212 @@
+{% load static %}
+
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon_BLUE.png '%}">
+
+    <style>
+        
+
+        *{
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .logo img{
+            width: 200px;
+        }
+
+        header{
+            width: 100%;
+            height: 10vh;
+            margin: auto;
+            background-color: #041C32  ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container{
+            width: 80%;
+            height: 10vh;
+            margin: auto;
+            background-color: #041C32  ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .links a{
+            font-size: 1em;
+            text-decoration: none;
+            color: lightgray;
+            margin-left: 40px;
+        }
+
+        .links{
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+
+        h5{
+            text-align: center;
+        }
+
+
+        #loginbtn{
+            padding: 5px 30px;
+            border: 1.5px solid #fb5607;
+            border-radius: 10px;
+        }
+
+        .usericonimg{
+            width: 35px;
+        }
+
+        .main-content-container{
+            width: 80%;
+            margin: auto;
+        }
+
+        /* nav bar styling */
+
+        /* main content styling */
+
+        .main-content-header{
+                width:100%;
+                border: 1px solid rgb(33, 67, 20);
+                margin: 50px 0px 50px 0px;
+            
+                text-align: center;
+            }
+
+        #update_btn{
+            padding: 5px 5px;
+            font-size: 10px;
+            font-weight: 600;
+            background-color: #00b4d8;
+            text-decoration: none;
+            color: #edede9;
+            border-radius: 5px;
+            
+        }
+
+        #delete_btn{
+            padding: 5px 5px;
+            font-size: 10px;
+            font-weight: 600;
+            background-color: #ef233c;
+            text-decoration: none;
+            color: #edede9;
+            border-radius: 5px;
+            
+        }
+
+        #view_btn{
+            padding: 5px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0077b6;
+            border: 2px solid #0077b6;
+            border-radius: 5px;
+            
+        }
+
+        #view_report{
+            padding: 5px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #00916e;
+            color: #edede9;
+            border-radius: 5px;
+        }
+
+
+        /* report cards styling */
+
+        .main-container{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .reportcard{
+            width: 30%;
+
+        }
+
+        /* reports table */
+        .reports-table{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 50%;
+     
+        }
+        .reports-table th{
+            background-color: #041C32;
+            color: blanchedalmond;
+            text-align: left;
+        }
+        .reports-table th,.reports-table td{
+            padding: 12px 10px;
+        }
+
+        .reports-table tbody tr{
+            border-bottom: 1px solid rgb(210, 202, 202);
+        }
+        .reports-table tbody tr:nth-of-type(even){
+            background-color: rgb(238, 230, 230);
+        }
+
+        .reports-table tbody tr:last-of-type{
+            border-bottom: 2px solid #041C32;
+        }
+
+    </style>
+
+    <title>{% block title %}  {% endblock title %}</title>
+</head>
+<body>
+
+        
+    
+        <header>
+
+            <div class="nav-container">
+                 <div class="logo">
+                    <a href="{% url 'home'%}"><img src="/static/images/Logistics_WHITE.png" alt="aih logistics"></a>
+                 </div>
+         
+                 <nav class="links">
+                     <h5> Welcome, {{request.user}}</h5>
+                     <a href="{% url 'logoutuser'%}">Logout</a>
+                 </nav>
+            </div>
+             
+         </header>
+
+
+         <div class="main-content-container">
+
+            {% block maincontent %}
+
+
+         
+            {% endblock maincontent %}
+
+         </div>
+     
+     
+ </body>
+ </html> 

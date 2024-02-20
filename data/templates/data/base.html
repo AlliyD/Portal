@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon_BLUE.png '%}">
+    <title>{% block title %}  {% endblock title %}</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .logo img{
+            width: 150px;
+        }
+    
+        header{
+            width: 80%;
+            height: 10vh;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .links a{
+            font-size: 1em;
+            text-decoration: none;
+            color: lightgray;
+            margin-left: 40px;
+        }
+    
+        #loginbtn{
+            padding: 5px 30px;
+            border: 1.5px solid #fb5607;
+            border-radius: 10px;
+        }
+    
+    
+    </style>
+    
+    
+    
+        <header>
+           <!--<div class="nav-container"></div>--> 
+                <div class="logo">
+                   <a href="#"><img src="/static/images/Logistics_WHITE.png" alt="aih logistics"></a>
+                </div>
+        
+                <nav class="links">
+                    <a href="{% url 'loginpage' %}" id="loginbtn">Login</a>
+                </nav>
+        
+            
+        </header>
+    
+    {% block maincontent %}
+
+    {% endblock maincontent %}
+</body>
+</html> 

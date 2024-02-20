@@ -1,0 +1,19 @@
+{% extends "data\reportsbase.html" %}
+
+{% block title %}
+    Create Report | AIH Reporting
+{% endblock title %}
+
+
+{% block maincontent %}
+    <p>Are you sure you want to delete the {{item}}?</p>
+
+    <form action="{% url 'delete_report' item.id %}" method="POST">
+        {% csrf_token %}
+
+        <a href="{% url 'reports' %}">Cancel</a>
+
+        <input type="submit" value="Confirm">
+    </form>
+
+{% endblock %}
