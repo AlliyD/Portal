@@ -9,7 +9,7 @@
 <form action="#" method="POST">
     {% csrf_token %}
 
-    {% render_field newreportform.report_name placeholder="Enter Report Name" %}
+    {{newreportform}}
 
     <input type="submit" value="Submit" name="Create Form">
 </form>
