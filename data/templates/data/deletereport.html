@@ -8,25 +8,70 @@
 {% block maincontent %}
 
 <style>
+
+    .bg-container{
+        width: 100%;
+        margin: auto;
+        background-image: url('/static/images/deletereportbg.jpg');
+        background-position: center;
+        height: 90vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .main-container{
-        width: 60%;
+        width: 50%;
         margin: auto;
         height: 50vh;
+        align-items: center;
+    }
+
+    .prompt-container{
+        width: 100%;
+        height: 80%;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .prompt-container a{
+        padding: 5px 10px;
+        text-decoration: none;
+        background-color: #ff6b35;
+        color: white;
+        border-radius: 5px;
+        font-size: 25px;
+    }
+
+    p{
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 </style>
 
-<div class="main-container">
-    <p>Are you sure you want to delete the {{item}}?</p>
+<div class="bg-container">
 
-    <form action="{% url 'delete_report' item.id %}" method="POST">
-        {% csrf_token %}
 
-        <a href="{% url 'reports' %}">Cancel</a>
-
-        <input type="submit" value="Confirm">
-    </form>
+    <div class="main-container">
+        <div class="prompt-container">
+    
+            <p>Are you sure you want to delete the {{item}}?</p>
+    
+            <form action="{% url 'delete_report' item.id %}" method="POST">
+                {% csrf_token %}
+        
+                <a href="{% url 'reports' %}">Cancel</a>
+        
+                <input type="submit" value="Confirm">
+            </form>
+    
+    
+        </div>
+      
+    
+    </div>
 
 </div>
+
    
 
 {% endblock %}

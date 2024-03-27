@@ -6,12 +6,57 @@
 
 
 {% block maincontent %}
-<form action="#" method="POST">
-    {% csrf_token %}
 
-    {{newreportform}}
+<style>
 
-    <input type="submit" value="Submit" name="Create Form">
-</form>
+.update-report-main-container{
+
+    width: 100%;
+    margin: auto;
+    background-image: url('/static/images/newreportreportbg.png');
+    background-position: center;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.update-content-styling{
+    width: 80%;
+    height: 90vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+   
+}
+
+.update-report-form-col{
+    height: 60%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+
+
+    <div class="update-report-main-container">
+
+        <div class="update-content-styling">
+                <div class="update-report-form-col">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+
+                    {{newreportform}}
+
+                    <input type="submit" value="Submit" name="Create Form">
+                </form>
+                </div>
+
+        </div>
+
+        <div class="helper-col">
+
+        </div>
+
+    </div>
 
 {% endblock %}

@@ -1,5 +1,6 @@
 {% extends "data\reportsbase.html" %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}
     Create Report | AIH Reporting
@@ -49,6 +50,7 @@
                 {% csrf_token %}
             
                 {{newreportform}}
+                
             
                 <input type="submit" value="Update" name="Create Form">
             </form>
